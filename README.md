@@ -9,3 +9,5 @@ db_create.py - подключение к бд; создание таблиц com
 db_filling_tables - подключение к бд; заполнение таблиц companies и vacancies данными о работодателях и их вакансиях.
 
 class_DBManager - для работы с данными в БД.
+
+queries.sql - хранятся SQL-запросы для портала
