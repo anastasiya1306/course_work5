@@ -1,7 +1,7 @@
-from hh_request import*
-from db_create import*
-from db_filling_tables import*
-from class_DBManager import*
+from hh_request import HH
+from db_create import DBCreate
+from db_filling_tables import DBFilling
+from class_DBManager import DBManager
 
 
 # Список работодателей
@@ -26,7 +26,7 @@ print("Собраны данные о 10 работодателях и их ва
       "Нажмите 2, чтобы вывести список всех вакансий с указанием названия компании, названия вакансии и зарплаты и ссылки на вакансию\n"
       "Нажмите 3, чтобы вывести среднюю зарплату по вакансиям\n"
       "Нажмите 4, чтобы вывести список всех вакансий, у которых зарплата выше средней по всем вакансиям\n"
-      "Нажмите 5, чтобы вывести список всех вакансий, в названии которых содержатся переданные в метод слова, например “python”\n"
+      "Нажмите 5, чтобы вывести список всех вакансий, в названии которых содержится слово “python”\n"
       "Нажмите 'stop', чтобы завершить программу")
 
 user_input = input(f'Введите команду: ')
@@ -64,10 +64,9 @@ while user_input != 'stop':
         user_input = input(f'Введите команду: ')
 
     if user_input == '5':
-        keyword = input(f'Введите слово: ')
         db_hh = DBManager()
         conn = db_hh.get_connection()
-        vacancies_with_keyword = db_hh.get_vacancies_with_keyword(keyword)
+        vacancies_with_keyword = db_hh.get_vacancies_with_keyword()
         for i in vacancies_with_keyword:
             print(i)
         user_input = input(f'Введите команду: ')
