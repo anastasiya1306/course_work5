@@ -60,7 +60,7 @@ class DBManager():
             self.conn.close()
 
 
-    def get_vacancies_with_keyword(self, keyword):
+    def get_vacancies_with_keyword(self):
         """Получает список всех вакансий, в названии которых содержатся переданные в метод слова, например “python”"""
         try:
             with self.conn:
